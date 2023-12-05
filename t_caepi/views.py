@@ -30,9 +30,11 @@ def caepi(request, ca):
                 response = HttpResponse(caepi.pdf, content_type='application/pdf')
                 response['Content-Disposition'] = f'attachment; filename="{caepi.pdf.name}"'
                 return response
+            
         response = HttpResponse(caepi.pdf, content_type='application/pdf')
         response['Content-Disposition'] = f'attachment; filename="{caepi.pdf.name}"'
         return response
+    
     except CaEPI.DoesNotExist:
         
         
